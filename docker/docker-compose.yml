@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  schemaspy:
+    build: ./
+    image: schemaspy/schemaspy:latest
+    volumes:
+      - ../data:/output
+      - ./config/sample.prop:/app/schemaspy.properties:ro
+      # - ./config/mysql.prop:/app/schemaspy.properties:ro
+      # - ./config/pgsql.prop:/app/schemaspy.properties:ro
+    container_name: "schemaspy"
+    command: "java -jar schemaspy.jar -configFile /app/schemaspy.properties -vizjs"
+
+  nginx_schemaspy:
+    image: nginx:1.19.5-alpine
+    container_name: "nginx_schemaspy"
+    ports:
+      - "8080:80"
+    volumes:
+      - ../data:/usr/share/nginx/html:ro

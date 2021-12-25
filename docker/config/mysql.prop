@@ -1,0 +1,10 @@
+schemaspy.t=mysql
+schemaspy.dp=/app/mysql.jar
+
+schemaspy.host=%host
+schemaspy.port=%port (default: 3306)
+schemaspy.db=%database_name
+schemaspy.u=%login_id
+schemaspy.p=%login_password
+schemaspy.o=/output
+schemaspy.s=%db_schema
