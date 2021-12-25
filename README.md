@@ -11,27 +11,11 @@ Author : Yugeta.Koji
 
 # Run
 - Dockerを起動した状態で下記をコマンドを実行してください。
-$ sh run.sh
+- $ sh run.sh
 
 
 
-
---- old:
-
-# Summary
-- データベースのテーブル数が200以上あり、構成図などが存在しないとの事だったので、ER図や、それぞれのDB,テーブル情報を自動作成し、ER図まで作ってくれる"SchemaSpy"というシステムをdockerで便利に利用できることがわかったので、実行して現段階（2021.12.23現在）の構成図を作成してみた。
-- 
-
-# 作成環境
-- MacBookAir 2020 M1
-
-
-# 実行
-- このディレクトリ構成をDL(clone)して、docker-compose.ymlのある階層で、以下コマンドを実行すると、outputフォルダが作られて、数分でファイルが作成完了します。
-- $ docker-compose up
-
-
-# 以下参考情報
+# 参考
 - schemasqlについて
   - url : https://hub.docker.com/r/schemaspy/schemaspy/
   - $ docker run -v "$PWD:/output" -v "[path-to-config-file]:/nadia.properties" schemaspy/schemaspy:[snapshot, latest or specific version] [options]
